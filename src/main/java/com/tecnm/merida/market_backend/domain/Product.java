@@ -1,12 +1,10 @@
 package com.tecnm.merida.market_backend.domain;
 
-import com.tecnm.merida.market_backend.persistence.entity.Categoria;
-
 public class Product {
 
     private Integer productId;
     private String name;
-    private int CategoryId;
+    private Integer categoryId;
     private double price;
     private int stock;
     private boolean active;
@@ -28,12 +26,12 @@ public class Product {
         this.name = name;
     }
 
-    public int getCategoryId() {
-        return CategoryId;
+    public Integer getCategoryId() {
+        return categoryId;
     }
 
     public void setCategoryId(int categoryId) {
-        CategoryId = categoryId;
+        this.categoryId = categoryId;
     }
 
     public double getPrice() {

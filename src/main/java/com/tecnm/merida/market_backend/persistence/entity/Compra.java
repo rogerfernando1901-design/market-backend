@@ -10,7 +10,6 @@ import java.util.List;
 @Table (name = "compras")
 
 public class Compra {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "id compra")
@@ -27,12 +26,14 @@ public class Compra {
     private String comentario;
     private String estado;
 
-    //Relacion con el cliente
+    //Relación con el cliente
+    //Mucho compras para un cliente
     @ManyToOne
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "compra")
+    //Relación compra producto
+    @OneToMany(mappedBy = "compra", cascade =CascadeType.ALL)
     private List<CompraProducto> productos;
 
     public Integer getIdCompra() {
@@ -98,5 +99,4 @@ public class Compra {
     public void setProductos(List<CompraProducto> productos) {
         this.productos = productos;
     }
-
 }

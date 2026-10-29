@@ -2,16 +2,16 @@ package com.tecnm.merida.market_backend.domain;
 
 public class Category {
 
-    private Integer categoryId;
+    private Integer categoryid;
     private String category;
     private boolean active;
 
-    public Integer getCategoryId() {
-        return categoryId;
+    public Integer getCategoryid() {
+        return categoryid;
     }
 
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
+    public void setCategoryid(Integer categoryid) {
+        this.categoryid = categoryid;
     }
 
     public String getCategory() {
@@ -29,5 +29,4 @@ public class Category {
     public void setActive(boolean active) {
         this.active = active;
     }
-
 }

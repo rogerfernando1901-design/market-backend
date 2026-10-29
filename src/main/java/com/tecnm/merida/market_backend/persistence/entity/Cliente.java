@@ -1,13 +1,13 @@
 package com.tecnm.merida.market_backend.persistence.entity;
 
-import  jakarta.persistence.*;
+import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "clientes")
-
 public class Cliente {
+
     @Id
     private Integer id;
     private String nombre;
@@ -18,55 +18,51 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente")
     private List<Compra> compras;
 
-    @Column(name = "correo_electronico")
-    private String CorreoElectronico;
-
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getApellidos() {
         return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
     }
 
     public String getCelular() {
         return celular;
     }
 
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
-
     public String getDireccion() {
         return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
     }
 
     public String getCorreoElectronico() {
         return CorreoElectronico;
     }
 
-    public void setCorreoElectronico(String correoElectronico) {
-        CorreoElectronico = correoElectronico;
+    @Column(name = "correo_electronico")
+    private String CorreoElectronico;
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public List<Compra> getCompras() {
@@ -77,4 +73,7 @@ public class Cliente {
         this.compras = compras;
     }
 
+    public void setCorreoElectronico(String correoElectronico) {
+        CorreoElectronico = correoElectronico;
+    }
 }
